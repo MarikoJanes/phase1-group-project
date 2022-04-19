@@ -90,11 +90,28 @@ function showDogImg(dogName) {
     fetch(`https://dog.ceo/api/breed/${dogName}/images`)
     .then(res => res.json())
     .then(data => {
-        filteredList.push(data.message);
-        console.log(filteredList);
+        
+        
+        
         const img = document.getElementById("dog");
         img.src = data.message[0];
+        extraImg(data.message)
         
+    })
+}
+
+function extraImg(arr) {
+    const btn = document.getElementById('extra');
+    let num;
+    btn.addEventListener("click", () => {
+        for(let i = 1; i < 4; i++) {
+            
+            num = Math.floor(Math.random()* arr.length);
+            const hiddenImg = document.getElementById(`img${i}`);
+            console.log(num);
+            console.log(arr[num]);
+            hiddenImg.src = arr[num];
+        }
     })
 }
 
