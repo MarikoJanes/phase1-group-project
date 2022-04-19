@@ -1,3 +1,20 @@
 body {
     background-color: antiquewhite;
+    text-align: center;
+    
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+#extra {
+    display: none;
+    margin: auto;
+}
+
+div {
+    margin-bottom: 10px;
 }

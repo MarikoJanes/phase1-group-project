@@ -27,9 +27,13 @@ function callFetch() {
         dogName.textContent = dogData[0].breeds[0].name;
      }
      dogImg.src = dogData[0].url;
-     dogHeight.textContent = dogData[0].breeds[0].height.imperial
-     dogLife.textContent = dogData[0].breeds[0].life_span
-     dogBred.textContent = dogData[0].breeds[0].bred_for
+     dogHeight.textContent = `Height: Up To ${dogData[0].breeds[0].height.imperial}`;
+     dogLife.textContent = `Life span: Average ${dogData[0].breeds[0].life_span}`;
+     dogBred.textContent = `Bred for: ${dogData[0].breeds[0].bred_for}`;
+     const reloadBtn = document.getElementById("reload");
+     reloadBtn.addEventListener("click", () => {
+         callFetch();
+     })
  }
 
 
@@ -57,7 +61,7 @@ callFetch();
 
 const breedUrl = 'https://dog.ceo/api/breeds/list/all';
 const select = document.getElementById("breed-dropdown");
-let filteredList = [];
+const div = document.getElementById("dog_image");
 
 function fetchDogCeo() {
     fetch(breedUrl)
@@ -91,12 +95,14 @@ function showDogImg(dogName) {
     .then(res => res.json())
     .then(data => {
         
-        
-        
-        const img = document.getElementById("dog");
+        const img = document.createElement("img");
+        img.setAttribute("id", "dog");
         img.src = data.message[0];
-        extraImg(data.message)
-        
+        div.append(img);
+        extraImg(data.message)  
+        const extraBtn = document.getElementById("extra");
+        extraBtn.style.display = "block";
+
     })
 }
 
@@ -107,10 +113,12 @@ function extraImg(arr) {
         for(let i = 1; i < 4; i++) {
             
             num = Math.floor(Math.random()* arr.length);
-            const hiddenImg = document.getElementById(`img${i}`);
+            const hiddenImg = document.createElement("img");
+            hiddenImg.setAttribute("id", `img${i}`);
             console.log(num);
             console.log(arr[num]);
             hiddenImg.src = arr[num];
+            div.append(hiddenImg);
         }
     })
 }

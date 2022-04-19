@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hello</title>
     <!-- font awesome -->
-    <link rel="stylesheet" src="style.css">
+    <link rel="stylesheet" href="style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
     <script defer src="index.js"></script>
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>Meet your new friend!</h1>
 
     <div id="container">
         <h1 id="name">name here</h1>
@@ -19,6 +19,7 @@
         <p id="height">height here</p>
         <p id="life_span"> life span here</p>
         <p id="bred_for"> bred for here</p>
+        <button id="reload"><i class="fas fa-redo"></i></button>
     </div>
     <div id="like_button">
     <btn id="like"> <i class="far fa-thumbs-up"></i>  LOVE IT  </btn>
@@ -28,22 +29,22 @@
     </div>
 
 
-    <label for="select-breed">Filter Breeds:</label>
+        <!-- create a dropdown list -->
+    <label for="select-breed">Explore Breeds:</label>
     <select id="breed-dropdown" name="select-breed">
         <option selected>Select</option>
+        <!-- other option tags will be added here by DOM -->
     </select>
 
     <div id="dog_image">
-        <img id="dog" src="" alt="">
+        <!-- images will be appended by DOM 
+        function showDogImg/ extraImg -->
+        
     </div>
-    <div>
+    <div class="btn_container">
         <button id="extra">See more dogs</button>
     </div>
-    <div>
-        <img id="img1" src="">
-        <img id="img2" src="">
-        <img id="img3" src="">
-    </div>
+
 
 
 
