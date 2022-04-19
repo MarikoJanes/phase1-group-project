@@ -47,8 +47,60 @@ nopeBtn.addEventListener("click", () => {
     likeBtn.innerHTML = '<btn id="like"> <i class="far fa-thumbs-up"></i>  LOVE IT  </btn>'
 })
 
-console.log("hello");
 
 
-callFetch()
 
+callFetch();
+
+
+
+
+const breedUrl = 'https://dog.ceo/api/breeds/list/all';
+const select = document.getElementById("breed-dropdown");
+let filteredList = [];
+
+function fetchDogCeo() {
+    fetch(breedUrl)
+    .then(res => res.json())
+    .then(data => {
+        for (const element in data.message) {
+            addList(element)
+        }
+    });
+}
+
+
+function addList(element) {
+    const option = document.createElement("option");
+    option.innerHTML = `<option value="${element}">${element}</option>`;
+    select.append(option);
+}
+
+function filterBreed() {
+    let selectedValue = select.value;
+    console.log(selectedValue);
+    select.addEventListener("change", () => {
+        selectedValue = select.value;
+        console.log(selectedValue);
+        showDogImg(selectedValue);
+    })
+};
+
+function showDogImg(dogName) {
+    fetch(`https://dog.ceo/api/breed/${dogName}/images`)
+    .then(res => res.json())
+    .then(data => {
+        filteredList.push(data.message);
+        console.log(filteredList);
+        const img = document.getElementById("dog");
+        img.src = data.message[0];
+        
+    })
+}
+
+fetchDogCeo();
+filterBreed();
+
+
+// let num;    0 - (arr.length - 1)
+// num = Math.floor(Math.random() * (arr.length));
