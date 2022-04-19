@@ -118,6 +118,3 @@ function extraImg(arr) {
 fetchDogCeo();
 filterBreed();
 
-
-// let num;    0 - (arr.length - 1)
-// num = Math.floor(Math.random() * (arr.length));
