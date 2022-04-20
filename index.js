@@ -95,30 +95,37 @@ function showDogImg(dogName) {
     .then(res => res.json())
     .then(data => {
         
-        const img = document.createElement("img");
-        img.setAttribute("id", "dog");
-        img.src = data.message[0];
-        div.append(img);
+        // const img = document.createElement("img");
+        // img.setAttribute("id", "dog");
+        // img.src = data.message[0];
+        // div.append(img);
+        const imgs = document.querySelectorAll(".extraImg");
+        imgs[0].src = data.message[0];
+        imgs[0].style.display = "block";
+        imgs[0].style.margin = "auto";
         extraImg(data.message)  
         const extraBtn = document.getElementById("extra");
         extraBtn.style.display = "block";
+
+
 
     })
 }
 
 function extraImg(arr) {
     const btn = document.getElementById('extra');
+    const imgs = document.querySelectorAll(".extraImg");
     let num;
     btn.addEventListener("click", () => {
-        for(let i = 1; i < 4; i++) {
+        for(let i = 0; i < imgs.length; i++) {
             
             num = Math.floor(Math.random()* arr.length);
-            const hiddenImg = document.createElement("img");
-            hiddenImg.setAttribute("id", `img${i}`);
+           
             console.log(num);
             console.log(arr[num]);
-            hiddenImg.src = arr[num];
-            div.append(hiddenImg);
+            imgs[i].src = arr[num];
+            imgs[i].style.display = "block";
+            imgs[i].style.display = "inline";
         }
     })
 }

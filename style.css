@@ -16,7 +16,12 @@ img {
 }
 
 div {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.extraImg {
+  display: none;
+
 }
 
 /* paw print CSS code */
