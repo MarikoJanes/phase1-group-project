@@ -4,15 +4,64 @@ body {
     
 }
 
+.title {
+  color: #534340;
+  font-size: 60px;
+  margin: 50px 0;
+}
+
+h1 {
+  color: #534340;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+p {
+  color: #534340;
+  font-size: 20px;
+}
 img {
     height: 300px;
     width: 300px;
     object-fit: cover;
 }
 
+#like {
+  background-color: #FF6363; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+#nope {
+  background-color: #008CBA; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 3px;
+}
+
+label {
+  font-size: 20px;
+}
+
+select {
+  font-size: 16px;
+}
+
 #extra {
     display: none;
     margin: auto;
+    font-size: 16px;
 }
 
 div {
@@ -79,7 +128,7 @@ div {
   opacity: 0;
   position: absolute;
   left: 0;
-  top: 300px;
+  top: 320px;
   transform: rotate(-40deg);
   -webkit-animation: walk 3s linear infinite;
   animation: /*keyframe*/walk /*duration*/3s /*transition*/linear /*repeat*/infinite;
@@ -88,7 +137,7 @@ div {
   opacity: 0;
   position: absolute;
   left: 12.5%;
-  top: 280px;
+  top: 300px;
   transform: rotate(-5deg); 
   -webkit-animation: walk 3s linear infinite 0.25s;
   animation: walk 3s linear infinite /*delay*/0.25s;
@@ -97,7 +146,7 @@ div {
   opacity: 0;
   position: absolute;
   left: 22%;
-  top: 130px;
+  top: 150px;
   transform: rotate(-10deg); 
   -webkit-animation: walk 3s linear infinite 0.5s;
   animation: walk 3s linear infinite 0.5s;
@@ -106,7 +155,7 @@ div {
   opacity: 0;
   position: absolute;
   left: 35%;
-  top: 280px;
+  top: 300px;
   transform: rotate(-20deg); 
   -webkit-animation: walk 3s linear infinite 0.75s;
   animation: walk 3s linear infinite 0.75s;
@@ -114,8 +163,8 @@ div {
 .paw-print-5 {
   opacity: 0;
   position: absolute;
-  left: 50%;
-  top: 50px;
+  left: 53%;
+  top: 70px;
   transform: rotate(10deg); 
   -webkit-animation: walk 3s linear infinite 1s;
   animation: walk 3s linear infinite 1s;
@@ -124,7 +173,7 @@ div {
   opacity: 0;
   position: absolute;
   left: 62.5%;
-  top: 200px;
+  top: 220px;
   transform: rotate(10deg); 
   -webkit-animation: walk 3s linear infinite 1.25s;
   animation: walk 3s linear infinite 1.25s;
@@ -133,7 +182,7 @@ div {
   opacity: 0;
   position: absolute;
   left: 75%;
-  top: 50px;
+  top: 70px;
   transform: rotate(20deg); 
   -webkit-animation: walk 3s linear infinite 1.5s;
   animation: walk 3s linear infinite 1.5s;
@@ -142,7 +191,7 @@ div {
   opacity: 0;
   position: absolute;
   left: 85%;
-  top: 250px;
+  top: 270px;
   transform: rotate(10deg); 
   -webkit-animation: walk 3s linear infinite 1.75s;
   animation: walk 3s linear infinite 1.75s;
@@ -158,3 +207,4 @@ div {
   25%  {opacity: 1;}
   100% {opacity: 0;}
 }
+

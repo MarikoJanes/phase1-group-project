@@ -39,16 +39,17 @@ function callFetch() {
 
 const likeBtn = document.getElementById("like");
 let clicks = 0;
-likeBtn.addEventListener("click", () => {
+likeBtn.addEventListener("click", (e) => {
     clicks++;
-    likeBtn.innerHTML = `<button><i class="far fa-thumbs-up"></i>  LOVE IT  ${clicks} likes`;
+    
+    likeBtn.innerHTML = `<i class="far fa-thumbs-up"></i>  LOVE IT  ${clicks} likes`;
 })
 
 const nopeBtn = document.getElementById("nope");
-nopeBtn.addEventListener("click", () => {
+nopeBtn.addEventListener("click", (e) => {
     callFetch();
     clicks = 0;
-    likeBtn.innerHTML = '<btn id="like"> <i class="far fa-thumbs-up"></i>  LOVE IT  </btn>'
+    likeBtn.innerHTML = '<i class="far fa-thumbs-up"></i>  LOVE IT'
 })
 
 
@@ -94,11 +95,6 @@ function showDogImg(dogName) {
     fetch(`https://dog.ceo/api/breed/${dogName}/images`)
     .then(res => res.json())
     .then(data => {
-        
-        // const img = document.createElement("img");
-        // img.setAttribute("id", "dog");
-        // img.src = data.message[0];
-        // div.append(img);
         const imgs = document.querySelectorAll(".extraImg");
         imgs[0].src = data.message[0];
         imgs[0].style.display = "block";
@@ -106,8 +102,6 @@ function showDogImg(dogName) {
         extraImg(data.message)  
         const extraBtn = document.getElementById("extra");
         extraBtn.style.display = "block";
-
-
 
     })
 }
