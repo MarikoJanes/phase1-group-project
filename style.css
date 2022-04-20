@@ -73,7 +73,7 @@ div {
 .paw-print-1 {
   opacity: 0;
   position: absolute;
-  left: 75px;
+  left: 0;
   top: 300px;
   transform: rotate(-40deg);
   -webkit-animation: walk 3s linear infinite;
@@ -82,7 +82,7 @@ div {
 .paw-print-2 {
   opacity: 0;
   position: absolute;
-  left: 275px;
+  left: 12.5%;
   top: 280px;
   transform: rotate(-5deg); 
   -webkit-animation: walk 3s linear infinite 0.25s;
@@ -91,7 +91,7 @@ div {
 .paw-print-3 {
   opacity: 0;
   position: absolute;
-  left: 375px;
+  left: 22%;
   top: 130px;
   transform: rotate(-10deg); 
   -webkit-animation: walk 3s linear infinite 0.5s;
@@ -100,7 +100,7 @@ div {
 .paw-print-4 {
   opacity: 0;
   position: absolute;
-  left: 575px;
+  left: 35%;
   top: 280px;
   transform: rotate(-20deg); 
   -webkit-animation: walk 3s linear infinite 0.75s;
@@ -109,7 +109,7 @@ div {
 .paw-print-5 {
   opacity: 0;
   position: absolute;
-  left: 725px;
+  left: 50%;
   top: 50px;
   transform: rotate(10deg); 
   -webkit-animation: walk 3s linear infinite 1s;
@@ -118,7 +118,7 @@ div {
 .paw-print-6 {
   opacity: 0;
   position: absolute;
-  left: 875px;
+  left: 62.5%;
   top: 200px;
   transform: rotate(10deg); 
   -webkit-animation: walk 3s linear infinite 1.25s;
@@ -127,7 +127,7 @@ div {
 .paw-print-7 {
   opacity: 0;
   position: absolute;
-  left: 1075px;
+  left: 75%;
   top: 50px;
   transform: rotate(20deg); 
   -webkit-animation: walk 3s linear infinite 1.5s;
@@ -136,7 +136,7 @@ div {
 .paw-print-8 {
   opacity: 0;
   position: absolute;
-  left: 1150px;
+  left: 85%;
   top: 250px;
   transform: rotate(10deg); 
   -webkit-animation: walk 3s linear infinite 1.75s;
