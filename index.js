@@ -8,12 +8,8 @@ function callFetch() {
     fetch(URL)
  .then(res => res.json())
  .then(dogData => {
-     
-    //  console.log(dogData[0])
-    //  console.log(dogData[0].breeds[0].name)
      dogPic(dogData)
  })
-//  .then(dogData => dogPic(dogData))
 }
 
  const dogPic = (dogData) => {
@@ -35,6 +31,7 @@ function callFetch() {
  const reloadBtn = document.getElementById("reload");
      reloadBtn.addEventListener("click", () => {
          callFetch();
+         likeBtn.innerHTML = `<i class="far fa-thumbs-up"></i>  LOVE IT`;
 })
 
 const likeBtn = document.getElementById("like");
@@ -61,10 +58,14 @@ function fetchDogCeo() {
     .then(res => res.json())
     .then(data => {
         for (const element in data.message) {
-            addList(element)
-        }
-    });
-}
+            addList(element);
+            if(data.message[element].length>0){
+                console.log(data.message[element][0]);
+                data.message[element].forEach(subBreed => addList(element+ "-" + subBreed)); 
+                }
+            }
+        })
+    }
 
 function addList(element) {
     const option = document.createElement("option");
@@ -73,12 +74,19 @@ function addList(element) {
 }
 
 function filterBreed() {
-    let selectedValue = select.value;
-    console.log(selectedValue);
+    let selectedValue;
     select.addEventListener("change", () => {
         selectedValue = select.value;
-        console.log(selectedValue);
+        if(selectedValue.includes("-")) {
+            let newValue = selectedValue.split("-");
+            showDogImg(newValue[0]);
+        } else {
         showDogImg(selectedValue);
+        };
+        const hiddenImgs = document.querySelectorAll(".extraImg");
+        for(let i = 1; i < hiddenImgs.length; i++) {
+            hiddenImgs[i].style.display = "none";
+        }
     })
 };
 
