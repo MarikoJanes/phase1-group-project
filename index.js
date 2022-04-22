@@ -79,7 +79,7 @@ function filterBreed() {
         selectedValue = select.value;
         if(selectedValue.includes("-")) {
             let newValue = selectedValue.split("-");
-            showDogImg(newValue[0]);
+            showDogImg(newValue[0],selectedValue);
         } else {
         showDogImg(selectedValue);
         };
@@ -90,15 +90,20 @@ function filterBreed() {
     })
 };
 
-function showDogImg(dogName) {
+function showDogImg(dogName, fullname = null) {
     fetch(`https://dog.ceo/api/breed/${dogName}/images`)
     .then(res => res.json())
     .then(data => {
         const imgs = document.querySelectorAll(".extraImg");
         imgs[0].src = data.message[0];
+        
+        if(fullname){
+            extraImg(data.message.filter(element => element.includes(fullname)))
+        }else{
+            extraImg(data.message)  
+        }
         imgs[0].style.display = "block";
         imgs[0].style.margin = "auto";
-        extraImg(data.message)  
         const extraBtn = document.getElementById("extra");
         extraBtn.style.display = "block";
 
