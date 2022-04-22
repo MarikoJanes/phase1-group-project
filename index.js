@@ -27,15 +27,15 @@ function callFetch() {
         dogName.textContent = dogData[0].breeds[0].name;
      }
      dogImg.src = dogData[0].url;
-     dogHeight.textContent = `Height: Up To ${dogData[0].breeds[0].height.imperial}`;
+     dogHeight.textContent = `Height: Up To ${dogData[0].breeds[0].height.imperial} inches`;
      dogLife.textContent = `Life span: Average ${dogData[0].breeds[0].life_span}`;
      dogBred.textContent = `Bred for: ${dogData[0].breeds[0].bred_for}`;
-     const reloadBtn = document.getElementById("reload");
+ }
+//moved outside of dog pic function because of odd DOM manipulation on reloads
+ const reloadBtn = document.getElementById("reload");
      reloadBtn.addEventListener("click", () => {
          callFetch();
-     })
- }
-
+})
 
 const likeBtn = document.getElementById("like");
 let clicks = 0;
@@ -48,17 +48,9 @@ likeBtn.addEventListener("click", (e) => {
 const nopeBtn = document.getElementById("nope");
 nopeBtn.addEventListener("click", (e) => {
     callFetch();
-    clicks = 0;
+    //clicks = 0;
     likeBtn.innerHTML = '<i class="far fa-thumbs-up"></i>  LOVE IT'
 })
-
-
-
-
-callFetch();
-
-
-
 
 const breedUrl = 'https://dog.ceo/api/breeds/list/all';
 const select = document.getElementById("breed-dropdown");
@@ -73,7 +65,6 @@ function fetchDogCeo() {
         }
     });
 }
-
 
 function addList(element) {
     const option = document.createElement("option");
@@ -124,6 +115,8 @@ function extraImg(arr) {
     })
 }
 
+//stored all function calls in one location
+callFetch();
 fetchDogCeo();
 filterBreed();
 
